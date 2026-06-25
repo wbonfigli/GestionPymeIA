@@ -332,7 +332,6 @@ footer{text-align:center;padding:1.5rem 1rem;font-size:12px;color:var(--muted);b
       <input class="finput" id="f-email" type="email" placeholder="tu@empresa.com.ar">
       <label class="flabel">¿Cuándo podemos llamarte?</label>
       <div class="checks" id="f-horarios">
-        <label class="fcheck"><input type="checkbox" value="Lun-Vie mañana (8-12hs)"> Lun–Vie · Mañana (8–12 hs)</label>
         <label class="fcheck"><input type="checkbox" value="Lun-Vie tarde (14-18hs)"> Lun–Vie · Tarde (14–18 hs)</label>
         <label class="fcheck"><input type="checkbox" value="Lun-Vie noche (18-21hs)"> Lun–Vie · Noche (18–21 hs)</label>
         <label class="fcheck"><input type="checkbox" value="Sábado mañana (9-13hs)"> Sábado · Mañana (9–13 hs)</label>
@@ -410,11 +409,13 @@ async function enviar(){
     contacto:  document.getElementById('f-contacto').value
   };
   try {
+    // Envía a Google Sheet
     fetch(SCRIPT_URL, {
       method:'POST', mode:'no-cors',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(data)
     });
+    // Envía a Formspree con FormData (compatible con plan gratuito)
     const fd = new FormData();
     fd.append('_subject', 'Consulta PyME IA — ' + data.empresa);
     Object.entries(data).forEach(([k,v]) => fd.append(k, v));
@@ -425,6 +426,11 @@ async function enviar(){
     });
     if(r.ok){ irPaso('ok'); }
     else { throw new Error('error'); }
+  } catch(err){
+    btn.textContent = 'Enviar solicitud ✓';
+    btn.disabled = false;
+    alert('Error al enviar. Intentá de nuevo o escribinos por WhatsApp.');
+  }
 }
 document.addEventListener('DOMContentLoaded', function(){
   if(window.location.search.includes('form')) abrirModal();
