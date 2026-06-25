@@ -415,18 +415,16 @@ async function enviar(){
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(data)
     });
+    const fd = new FormData();
+    fd.append('_subject', 'Consulta PyME IA — ' + data.empresa);
+    Object.entries(data).forEach(([k,v]) => fd.append(k, v));
     const r = await fetch(FORMSPREE_URL, {
       method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({_subject:'Consulta PyME IA — '+data.empresa, ...data})
+      headers:{'Accept':'application/json'},
+      body: fd
     });
     if(r.ok){ irPaso('ok'); }
-    else { throw new Error('Formspree error'); }
-  } catch(err){
-    btn.textContent = 'Enviar solicitud ✓';
-    btn.disabled = false;
-    alert('Error al enviar. Intentá de nuevo o escribinos por WhatsApp.');
-  }
+    else { throw new Error('error'); }
 }
 document.addEventListener('DOMContentLoaded', function(){
   if(window.location.search.includes('form')) abrirModal();
