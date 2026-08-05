@@ -3,6 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA para Pymes Industriales · Córdoba</title>
+<meta name="description" content="Automatización y control inteligente de procesos productivos para PyMEs industriales. Sin grandes inversiones. Resultados medibles en 90 días.">
+
+<!-- Open Graph: vista previa al compartir el link (WhatsApp, LinkedIn, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tu fábrica decide con datos reales, no con intuición">
+<meta property="og:description" content="Automatización y control inteligente de procesos productivos para PyMEs industriales de Córdoba. Sin grandes inversiones. Resultados medibles en 90 días.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:url" content="https://TU-DOMINIO-O-GITHUB-PAGES-AQUI/">
+<meta property="og:locale" content="es_AR">
+
+<!-- Twitter Card (mismo propósito, otras redes) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tu fábrica decide con datos reales, no con intuición">
+<meta name="twitter:description" content="Automatización y control inteligente de procesos productivos para PyMEs industriales de Córdoba.">
+<meta name="twitter:image" content="og-image.png">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -63,7 +79,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 1
 .sv-list li{font-size:13px;color:var(--text);padding:.3rem 0;display:flex;gap:8px;border-bottom:1px solid var(--border)}
 .sv-list li:last-child{border-bottom:none}
 .sv-list li::before{content:"✓";color:var(--accent2);font-weight:700;flex-shrink:0}
-.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.aud-grid,.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .aud{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem}
 .aud-icon{font-size:24px;margin-bottom:.5rem}
 .aud-name{font-size:14px;font-weight:700;margin-bottom:.3rem}
@@ -113,6 +129,7 @@ footer{text-align:center;padding:1.5rem 1rem;font-size:12px;color:var(--muted);b
   .caso-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .caso-before,.caso-after{margin-bottom:0}
   .aud-grid{grid-template-columns:repeat(4,1fr)}
+  .cap-grid{grid-template-columns:repeat(3,1fr)}
   .services-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
   .service{margin-bottom:0}
 }
@@ -133,7 +150,7 @@ footer{text-align:center;padding:1.5rem 1rem;font-size:12px;color:var(--muted);b
 <div class="hero">
   <div class="pill"><span class="pulse"></span>Córdoba · Industria 4.0</div>
   <h1>Tu fábrica decide<br>con <em>datos reales</em>,<br>no con intuición</h1>
-  <p>IA implementada en empresas industriales cordobesas. Sin grandes inversiones. Resultados medibles en 90 días.</p>
+  <p>Automatización y control inteligente de tu proceso productivo, construido sobre la información que ya generás hoy. Sin grandes inversiones. Resultados medibles en 90 días.</p>
   <div class="hero-btns">
     <button class="btn-main" onclick="abrirModal()">Quiero el diagnóstico gratuito</button>
     <button class="btn-sec" onclick="document.getElementById('caso').scrollIntoView({behavior:'smooth'})">Ver caso real →</button>
@@ -166,6 +183,7 @@ footer{text-align:center;padding:1.5rem 1rem;font-size:12px;color:var(--muted);b
       <div class="caso-item"><span class="ci-dot ad"></span>Un solo tablero con toda la operación en tiempo real</div>
       <div class="caso-item"><span class="ci-dot ad"></span>Alertas automáticas antes de que el problema escale</div>
       <div class="caso-item"><span class="ci-dot ad"></span>Trazabilidad completa de calidad por pieza o lote</div>
+      <div class="caso-item"><span class="ci-dot ad"></span>Ranking automático de operarios por velocidad y confiabilidad</div>
       <div class="caso-item"><span class="ci-dot ad"></span>Decisiones basadas en números, no en suposiciones</div>
     </div>
   </div>
@@ -183,6 +201,34 @@ footer{text-align:center;padding:1.5rem 1rem;font-size:12px;color:var(--muted);b
     <div class="mc"><div class="mc-n">72 hs</div><div class="mc-t">Retraso eliminado</div><div class="mc-d">De información tardía a datos en tiempo real</div></div>
     <div class="mc"><div class="mc-n">31%</div><div class="mc-t">Cuello de botella</div><div class="mc-d">Detectado automáticamente — invisible antes de la digitalización</div></div>
     <div class="mc"><div class="mc-n">90</div><div class="mc-t">Días al primer resultado</div><div class="mc-d">Sin inversión en SAP ni infraestructura costosa</div></div>
+  </div>
+</div>
+
+<div class="sec" style="padding-top:0">
+  <div class="sec-label">Qué construimos</div>
+  <div class="sec-title">Automatización y control inteligente, módulo por módulo</div>
+  <p class="sec-sub">No vendemos un software cerrado. Construimos un ecosistema a medida que crece con tu operación, empezando por donde más te está costando plata hoy.</p>
+  <div class="cap-grid">
+    <div class="aud"><div class="aud-icon">📊</div><div class="aud-name">Tablero en tiempo real</div><div class="aud-desc">Estado de cada orden de trabajo, semáforos de avance y detección automática de cuellos de botella</div></div>
+    <div class="aud"><div class="aud-icon">🎯</div><div class="aud-name">Priorización inteligente</div><div class="aud-desc">Algoritmos que rankean operarios por velocidad y confiabilidad, no por antigüedad ni intuición</div></div>
+    <div class="aud"><div class="aud-icon">🔍</div><div class="aud-name">Calidad y trazabilidad</div><div class="aud-desc">No conformidades registradas, analizadas y con alertas automáticas de recurrencia por tarea u operario</div></div>
+    <div class="aud"><div class="aud-icon">👥</div><div class="aud-name">RRHH sin papel</div><div class="aud-desc">Legajos digitales, ausentismo, sanciones y desempeño centralizados con historial completo</div></div>
+    <div class="aud"><div class="aud-icon">⏱️</div><div class="aud-name">Tiempos y productividad</div><div class="aud-desc">Tiempos muertos, horas extra y demoras detectados automáticamente, no a ojo ni al final del mes</div></div>
+    <div class="aud"><div class="aud-icon">📈</div><div class="aud-name">Dashboards gerenciales</div><div class="aud-desc">Indicadores que se actualizan solos — nada de armar planillas a mano cada semana</div></div>
+  </div>
+</div>
+
+<div class="sec" style="padding-top:0">
+  <div class="sec-label">Nuestro enfoque</div>
+  <div class="sec-title">Partimos de lo que ya tenés, no de cero</div>
+  <p class="sec-sub">La mayoría de las soluciones "enlatadas" —ERPs genéricos, sistemas cerrados de terceros— te obligan a tirar lo que ya usás y adaptar tu operación al software, con meses de implementación y licencias que te encierran. Nosotros hacemos lo contrario.</p>
+  <div class="caso-after" style="margin-bottom:0">
+    <div class="caso-head">✓ Cómo trabajamos</div>
+    <div class="caso-item"><span class="ci-dot ad"></span>Usamos la información que ya generás —Excel, planillas, papel— sin obligarte a migrar todo desde el día uno</div>
+    <div class="caso-item"><span class="ci-dot ad"></span>Digitalizamos gradualmente, proceso por proceso, sin frenar la producción</div>
+    <div class="caso-item"><span class="ci-dot ad"></span>Vos seguís siendo dueño de tus datos, sin licencias que te encierran de por vida</div>
+    <div class="caso-item"><span class="ci-dot ad"></span>El sistema crece con tu empresa: hoy un tablero, mañana calidad, RRHH o lo que necesites</div>
+    <div class="caso-item"><span class="ci-dot ad"></span>Interfaces simples, pensadas para el piso de planta, no para un manual de 200 páginas</div>
   </div>
 </div>
 
