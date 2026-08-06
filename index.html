@@ -435,9 +435,27 @@ const WA_NUMERO      = "543515184870";
 let ultimoEnvio = null;
 
 function abrirModal(){
+  resetFormulario();
   document.getElementById('overlay').style.display = 'block';
   document.body.style.overflow = 'hidden';
   irPaso(1);
+}
+function resetFormulario(){
+  // Limpia todos los inputs, selects y textareas del formulario
+  ['f-empresa','f-rubro','f-empleados','f-ciudad','f-detalle','f-sistema',
+   'f-nombre','f-cargo','f-tel','f-email','f-contacto'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  // Desmarca todos los checkboxes
+  document.querySelectorAll('#f-problemas input[type=checkbox], #f-horarios input[type=checkbox]')
+    .forEach(c => c.checked = false);
+  // Resetea el botón de envío por si había quedado en "Enviando…"
+  const btn = document.getElementById('btn-enviar');
+  if(btn){
+    btn.textContent = 'Enviar solicitud ✓';
+    btn.disabled = false;
+  }
 }
 function cerrarModal(){
   document.getElementById('overlay').style.display = 'none';
